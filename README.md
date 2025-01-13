@@ -14,3 +14,9 @@ A website using the Express/Node.js platform, with the Axios HTTP client, that i
 ## Render webpage from the client side
 https://localhost:3000
 
+## How to get a joke
+Just click the random-joke button to get a random joke. Otherwise chose between the categories below to get a specific joke by category.
+
+## About Chuck Norris
+Learn more about [Chuck Norris](https://en.wikipedia.org/wiki/Chuck_Norris).
+Great martial artist and actor who created a unique and epic style. 

@@ -28,9 +28,15 @@ const categories = [
   "travel",
 ];
 
-app.get('/', function (req, res) {
-    res.render('index.ejs', {joke: "Waiting for a joke...", categories: categories})
+app.get('/', async function (req, res) {
+    const result = await axios.get(`${API_URL}/random`);
+    console.log(result.data);
+    res.render('index.ejs', {joke: result.data.value, categories: categories});
+    
 });
 
+app.post('/category/joke', function (req, res) {
+    res.render('index.ejs', {joke: "hello joke!", categories: categories});
+})
 
 app.listen(PORT);

@@ -2,9 +2,37 @@ body {
     background-color: rgb(100, 110, 130);
     color: rgb(40, 40, 40);
     text-align: center;
+    font-family: sans-serif;
 }
 
 img {
     width: 20rem;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.joke-area {
+    width: 40rem;
+    background-color: rgb(200, 200, 230);
+}
+
+a {
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0);
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+a, input {
+    color: rgb(40, 40, 40);
+    background-color: rgb(200, 100, 100);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+

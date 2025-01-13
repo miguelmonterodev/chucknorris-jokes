@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuck Norris Jokes</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <img src="/images/chucknorris.webp" alt="Chuck Norris in war" />
+      <h1>The World of Chuck Norris Jokes</h1>
+    </header>
+    <main>
+        <section class="joke-area">
+            <h2><%= joke %></h2>
+        </section>
+        <section class="actions">
+          <a href="/random">random-joke</a>
+          <h3>Get a joke by category</h3>
+          <form action="/category-joke" method="POST">
+            <% for (category of categories) { %>
+            <input type="submit" name="<%= category %>" value="<%= category%>-joke" />
+            <% } %>
+          </form>
+        </section>
+    </main>
+  </body>
+</html>

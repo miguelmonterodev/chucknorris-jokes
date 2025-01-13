@@ -29,9 +29,13 @@ const categories = [
 ];
 
 app.get('/', async function (req, res) {
-    const result = await axios.get(`${API_URL}/random`);
-    console.log(result.data);
-    res.render('index.ejs', {joke: result.data.value, categories: categories});
+    try {
+        const result = await axios.get(`${API_URL}/random`);
+        console.log(result.data);
+        res.render('index.ejs', {joke: result.data.value, categories: categories});
+    } catch (error) {
+        res.render(error.message);
+    }
     
 });
 

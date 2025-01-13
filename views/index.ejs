@@ -20,7 +20,7 @@
           <h3>Get a joke by category</h3>
           <form action="/category/joke" method="POST">
             <% for (category of categories) { %>
-            <input type="submit" name="category-joke" value="<%= category%>-joke" />
+            <input type="submit" name="category" value="<%= category%>" />
             <% } %>
           </form>
         </section>

@@ -34,13 +34,21 @@ app.get('/', async function (req, res) {
         console.log(result.data);
         res.render('index.ejs', {joke: result.data.value, categories: categories});
     } catch (error) {
-        res.render(error.message);
+        res.render('index.ejs', {joke: error.message, categories: categories});
     }
     
 });
 
-app.post('/category/joke', function (req, res) {
-    res.render('index.ejs', {joke: "hello joke!", categories: categories});
-})
+app.post('/category/joke', async function (req, res) {
+    try {
+        const cat = (req.body.category);
+        const result = await axios.get(`${API_URL}/random?category=${cat}`);
+        res.render('index.ejs', {joke: result.data.value, categories: categories});
+    
+    } catch (error) {
+        res.render('index.ejs', {joke: error.message, categories: categories});
+    }
+    
+});
 
 app.listen(PORT);

@@ -16,11 +16,11 @@
             <h2><%= joke %></h2>
         </section>
         <section class="actions">
-          <a href="/random">random-joke</a>
+          <a href="/">random-joke</a>
           <h3>Get a joke by category</h3>
-          <form action="/category-joke" method="POST">
+          <form action="/category/joke" method="POST">
             <% for (category of categories) { %>
-            <input type="submit" name="<%= category %>" value="<%= category%>-joke" />
+            <input type="submit" name="category-joke" value="<%= category%>-joke" />
             <% } %>
           </form>
         </section>
